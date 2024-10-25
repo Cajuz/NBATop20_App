@@ -10,7 +10,38 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class InicioActivity extends AppCompatActivity {
 
-    @Override
+    private String titulo;
+    private String numeracao;
+    private int imagem;
+
+    public InicioActivity(String titulo, int imagem, String numeracao){
+        this.titulo = titulo;
+        this.imagem = imagem;
+        this.numeracao = numeracao;
+}
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public int getImagem() {
+        return imagem;
+    }
+
+    public void setImagem(int imagem) {
+        this.imagem = imagem;
+    }
+
+    public String getNumeracao(){
+        return numeracao;
+    }
+
+    public void setNumeracao(String numeracao){
+        this.numeracao = numeracao;
+    }    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
