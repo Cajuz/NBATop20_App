@@ -8,14 +8,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="#EDCB65">
+        android:background="#FBE422">
 
         <TextView
             android:id="@+id/idModeloNumeracaoRank"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="5sp"
+            android:layout_marginTop="05sp"
             android:gravity="center_horizontal"
             android:text="1º"
             android:textColor="#FF0000"

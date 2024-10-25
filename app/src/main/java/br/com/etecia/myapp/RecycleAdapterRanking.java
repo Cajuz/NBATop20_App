@@ -1,6 +1,8 @@
 package br.com.etecia.myapp;
 
 import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -17,7 +19,13 @@ public class RecycleAdapterRanking extends RecyclerView.Adapter<RecycleAdapterRa
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+        View view;
+
+        LayoutInflater inflater = LayoutInflater.from(context);
+
+        view = inflater.inflate(R.layout.modelo_top20,parent,false);
+
+        return new ViewHolder(view);
     }
 
     @Override
