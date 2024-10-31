@@ -14,19 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 public class RecycleAdapterRanking extends RecyclerView.Adapter<RecycleAdapterRanking.ViewHolder> {
-    public class ViewHolder extends  RecyclerView.ViewHolder{
-        TextView idModeloTituloRank;
-        TextView idModeloNumeracaoRank;
-        ImageView idModeloImagemRank;
 
-
-        public ViewHolder(@NonNull View itemView) {
-            super(itemView);
-            idModeloTituloRank = itemView.findViewById(R.id.idModeloTituloRank);
-            idModeloImagemRank = itemView.findViewById(R.id.idModeloImagemRank);
-            idModeloNumeracaoRank = itemView.findViewById(R.id.idModeloNumeracaoRank);
-        }
-    }
     //variaveis que representam a lista e o contexto
     private Context context;
     private List<top20> lsttop20;
@@ -36,8 +24,6 @@ public class RecycleAdapterRanking extends RecyclerView.Adapter<RecycleAdapterRa
         this.context = context;
         this.lsttop20=lsttop20;
     }
-
-
 
 
     @NonNull

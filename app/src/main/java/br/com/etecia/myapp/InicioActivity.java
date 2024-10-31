@@ -23,7 +23,8 @@ public class InicioActivity extends AppCompatActivity {
     RecyclerView idRecRank;
 
 
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
+
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
 
     View view = inflater.inflate(R.layout.inicio_layout, container,false);
     idRecRank = view.findViewById(R.id.idRecRank);
@@ -34,26 +35,26 @@ public class InicioActivity extends AppCompatActivity {
 
         Lsttop20 = new ArrayList<>();
         Lsttop20.add(
-                new InicioActivity("1", "Mobilete", R.drawable.mjordan));
-        new InicioActivity("2","Da cor Amarela", R.drawable.bicicleta_amarela);
-        new InicioActivity("3","Da cor Vermelha", R.drawable.bicicleta_vermelha);
-        new InicioActivity("4","Da cor Preta", R.drawable.bicicleta_preta);
-        new InicioActivity("5","Da cor Azul", R.drawable.bicicleta_azul);
-        new InicioActivity("6","Para Corrida", R.drawable.bicicleta_corrida);
-        new InicioActivity("7","De excursão", R.drawable.bicicleta_excursao);
-        new InicioActivity("8","Para Morro Baixo", R.drawable.bicicleta_morrobaixo);
-        new InicioActivity("9","Para Passeio", R.drawable.bicicleta_passeio);
-        new InicioActivity("10","Estilo Retrô", R.drawable.bicicleta_retro);
-        new InicioActivity("11","Mobilete", R.drawable.mobilete));
-        new InicioActivity("12","Da cor Amarela", R.drawable.bicicleta_amarela);
-        new InicioActivity("13","Da cor Vermelha", R.drawable.bicicleta_vermelha);
-        new InicioActivity("14","Da cor Preta", R.drawable.bicicleta_preta);
-        new InicioActivity("15","Da cor Azul", R.drawable.bicicleta_azul);
-        new InicioActivity("16","Para Corrida", R.drawable.bicicleta_corrida);
-        new InicioActivity("17","De excursão", R.drawable.bicicleta_excursao);
-        new InicioActivity("18","Para Morro Baixo", R.drawable.bicicleta_morrobaixo);
-        new InicioActivity("19","Para Passeio", R.drawable.bicicleta_passeio);
-        new InicioActivity("20","Estilo Retrô", R.drawable.bicicleta_retro);
+                new InicioActivity("1","Michael Jordan", R.drawable.mjordan));
+        new InicioActivity("2","LeBron James", R.drawable.lejames);
+        new InicioActivity("3","Kareem Abdul-Jabbar", R.drawable.karem);
+        new InicioActivity("4","Magic Johnson", R.drawable.magic_johnson);
+        new InicioActivity("5","Wilt Chamberlain", R.drawable.with);
+        new InicioActivity("6","Bill Russell", R.drawable.bill);
+        new InicioActivity("7","Larry Bird", R.drawable.bird);
+        new InicioActivity("8","Tim Duncan", R.drawable.duncam);
+        new InicioActivity("9","Oscar Robertson", R.drawable.robertson);
+        new InicioActivity("10","Kobe Bryant", R.drawable.kobe);
+        new InicioActivity("11","Shaquille O’Neal", R.drawable.shaquille);
+        new InicioActivity("12","Kevin Durant", R.drawable.bicicleta_amarela);
+        new InicioActivity("13","Hakeem Olajuwon", R.drawable.bicicleta_vermelha);
+        new InicioActivity("14","Julius Erving", R.drawable.bicicleta_preta);
+        new InicioActivity("15","Moses Malone", R.drawable.bicicleta_azul);
+        new InicioActivity("16","Stephen Curry", R.drawable.bicicleta_corrida);
+        new InicioActivity("17","Dirk Nowitzki", R.drawable.bicicleta_excursao);
+        new InicioActivity("18","Giannis Antetokounmpo", R.drawable.bicicleta_morrobaixo);
+        new InicioActivity("19","Jerry West", R.drawable.bicicleta_passeio);
+        new InicioActivity("20","Elgin Baylor", R.drawable.bicicleta_retro);
 
 
 //carregando o adaptador
