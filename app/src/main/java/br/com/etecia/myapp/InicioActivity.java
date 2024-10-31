@@ -1,11 +1,13 @@
 package br.com.etecia.myapp;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -17,69 +19,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class InicioActivity extends AppCompatActivity {
-
-    private String titulo;
-    private String numeracao;
-    private int imagem;
-
-    public InicioActivity(String numeracao, String titulo, int imagem ){
-        this.titulo = titulo;
-        this.imagem = imagem;
-        this.numeracao = numeracao;
-}
-    public String getTitulo() {
-        return titulo;
-    }
-
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
-
-    public int getImagem() {
-        return imagem;
-    }
-
-    public void setImagem(int imagem) {
-        this.imagem = imagem;
-    }
-
-    public String getNumeracao(){
-        return numeracao;
-    }
-
-    public void setNumeracao(String numeracao){
-        this.numeracao = numeracao;
-    }
-
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
-        setContentView(R.layout.inicio_layout);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
-    }
-
-    private List<InicioActivity> LstRanking;
+    private List<top20> Lsttop20;
     RecyclerView idRecRank;
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
 
-        View view = inflater.inflate(R.layout.inicio_layout, container, false);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
+
+    View view = inflater.inflate(R.layout.inicio_layout, container,false);
+    idRecRank = view.findViewById(R.id.idRecRank);
 
         idRecRank = view.findViewById(R.id.idRecRank);
 
         //carregando os objetos na lista
 
-        LstRanking = new ArrayList<>();
-        LstRanking.add(
+        Lsttop20 = new ArrayList<>();
+        Lsttop20.add(
                 new InicioActivity("1", "Mobilete", R.drawable.mjordan));
         new InicioActivity("2","Da cor Amarela", R.drawable.bicicleta_amarela);
         new InicioActivity("3","Da cor Vermelha", R.drawable.bicicleta_vermelha);
@@ -102,12 +56,12 @@ public class InicioActivity extends AppCompatActivity {
         new InicioActivity("20","Estilo Retrô", R.drawable.bicicleta_retro);
 
 
+//carregando o adaptador
+        RecycleAdapterRanking adapterBikeNovas = new RecycleAdapterRanking(getApplicationContext(), Lsttop20);
 
-        RecycleAdapterRanking adapterBikeNovas = new RecycleAdapterRanking(getContext(), LstRanking);
+        idRecRank.setLayoutManager(new GridLayoutManager(getApplicationContext(), 3));
 
-        idRecRank.setLayoutManager(new GridLayoutManager(getContext(), 3));
-
-        idRecRank.setAdapter(adapter);
+        idRecRank.setAdapter(adapterBikeNovas);
 
 
         return view;

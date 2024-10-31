@@ -22,4 +22,37 @@ public class top20 {
 //19. Jerry West
 //20. Elgin Baylor
 
+    private String titulo;
+    private String numeracao;
+    private int imagem;
+
+    public top20(String numeracao, String titulo, int imagem ){
+        this.titulo = titulo;
+        this.imagem = imagem;
+        this.numeracao = numeracao;
+    }
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public int getImagem() {
+        return imagem;
+    }
+
+    public void setImagem(int imagem) {
+        this.imagem = imagem;
+    }
+
+    public String getNumeracao(){
+        return numeracao;
+    }
+
+    public void setNumeracao(String numeracao){
+        this.numeracao = numeracao;
+    }
+
 }
