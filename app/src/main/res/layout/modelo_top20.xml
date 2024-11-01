@@ -8,7 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="#F0E15B">
+        android:background="@drawable/fundo">
 
         <TextView
             android:id="@+id/idModeloNumeracaoRank"
@@ -35,7 +35,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="5sp"
             android:text="Michael Jordan"
-            android:textColor="#BA1717"
+            android:textColor="#FFFFFF"
             android:textSize="25sp"
             android:textStyle="bold" />
 
