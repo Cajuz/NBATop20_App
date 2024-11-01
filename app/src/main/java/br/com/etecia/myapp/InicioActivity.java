@@ -1,5 +1,6 @@
 package br.com.etecia.myapp;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -24,47 +25,51 @@ public class InicioActivity extends AppCompatActivity {
 
 
 
-    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
+    @SuppressLint("MissingInflatedId")
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        EdgeToEdge.enable(this);
+        setContentView(R.layout.activity_main);
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
 
-    View view = inflater.inflate(R.layout.inicio_layout, container,false);
-    idRecRank = view.findViewById(R.id.idRecRank);
-
-        idRecRank = view.findViewById(R.id.idRecRank);
 
         //carregando os objetos na lista
 
         Lsttop20 = new ArrayList<>();
-        Lsttop20.add(
-                new InicioActivity("1","Michael Jordan", R.drawable.mjordan));
-        new InicioActivity("2","LeBron James", R.drawable.lejames);
-        new InicioActivity("3","Kareem Abdul-Jabbar", R.drawable.karem);
-        new InicioActivity("4","Magic Johnson", R.drawable.magic_johnson);
-        new InicioActivity("5","Wilt Chamberlain", R.drawable.with);
-        new InicioActivity("6","Bill Russell", R.drawable.bill);
-        new InicioActivity("7","Larry Bird", R.drawable.bird);
-        new InicioActivity("8","Tim Duncan", R.drawable.duncam);
-        new InicioActivity("9","Oscar Robertson", R.drawable.robertson);
-        new InicioActivity("10","Kobe Bryant", R.drawable.kobe);
-        new InicioActivity("11","Shaquille O’Neal", R.drawable.shaquille);
-        new InicioActivity("12","Kevin Durant", R.drawable.bicicleta_amarela);
-        new InicioActivity("13","Hakeem Olajuwon", R.drawable.bicicleta_vermelha);
-        new InicioActivity("14","Julius Erving", R.drawable.bicicleta_preta);
-        new InicioActivity("15","Moses Malone", R.drawable.bicicleta_azul);
-        new InicioActivity("16","Stephen Curry", R.drawable.bicicleta_corrida);
-        new InicioActivity("17","Dirk Nowitzki", R.drawable.bicicleta_excursao);
-        new InicioActivity("18","Giannis Antetokounmpo", R.drawable.bicicleta_morrobaixo);
-        new InicioActivity("19","Jerry West", R.drawable.bicicleta_passeio);
-        new InicioActivity("20","Elgin Baylor", R.drawable.bicicleta_retro);
-
+        Lsttop20.add( new top20("1","Michael Jordan", R.drawable.mjordan));
+        new top20("2","LeBron James", R.drawable.lejames);
+        new top20("4","Magic Johnson", R.drawable.magic_johnson);
+        new top20("5","Wilt Chamberlain", R.drawable.with);
+        new top20("6","Bill Russell", R.drawable.bill);
+        new top20("7","Larry Bird", R.drawable.bird);
+        new top20("8","Tim Duncan", R.drawable.duncam);
+        new top20("9","Oscar Robertson", R.drawable.robertson);
+        new top20("10","Kobe Bryant", R.drawable.kobe);
+        new  top20("11","Shaquille O’Neal", R.drawable.shaquille);
+        new  top20("12","Kevin Durant", R.drawable.durant);
+        new  top20("13","Hakeem Olajuwon", R.drawable.olajuwon);
+        new  top20("14","Julius Erving", R.drawable.erving);
+        new  top20("15","Moses Malone", R.drawable.malone);
+        new  top20("16","Stephen Curry", R.drawable.curry);
+        new  top20("17","Dirk Nowitzki", R.drawable.nowitizli);
+        new  top20("18","Giannis Antetokounmpo", R.drawable.giannis);
+        new  top20("19","Jerry West", R.drawable.west);
+        new  top20("20","Elgin Baylor", R.drawable.elgin_baylor);
+        new  top20("3","Kareem Abdul-Jabbar", R.drawable.karem);
+        idRecRank= findViewById(R.id.idRecRank);
 
 //carregando o adaptador
         RecycleAdapterRanking adapterBikeNovas = new RecycleAdapterRanking(getApplicationContext(), Lsttop20);
 
         idRecRank.setLayoutManager(new GridLayoutManager(getApplicationContext(), 3));
+      idRecRank.setAdapter(adapterBikeNovas);
+idRecRank.hasFixedSize();
 
-        idRecRank.setAdapter(adapterBikeNovas);
 
-
-        return view;
     }
 }
